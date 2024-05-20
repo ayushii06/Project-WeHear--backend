@@ -22,22 +22,7 @@ var userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    role:{
-        type:String,
-        default:"user",
-    },
-    cart:{
-        type:Array,
-        default:[],
-    },
-    address:{
-        type:String,
-    },
-    wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
-    refreshToken: {
-      type: String,
-    },
-    passwordChangedAt: Date,
+      passwordChangedAt: Date,
     passwordResetToken: String,
     passwordResetExpires: Date,
   },
@@ -53,15 +38,7 @@ userSchema.pre("save", async function (next) {
    
   });
  
-  userSchema.methods.createPasswordResetToken = async function () {
-    const resettoken = crypto.randomBytes(32).toString("hex");
-    this.passwordResetToken = crypto
-      .createHash("sha256")
-      .update(resettoken)
-      .digest("hex");
-    this.passwordResetExpires = Date.now() + 30 * 60 * 1000; // 10 minutes
-    return resettoken;
-  };
+
 
 //Export the model
 module.exports= mongoose.model('User', userSchema);
