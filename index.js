@@ -21,7 +21,7 @@ const cors = require('cors');
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://we-hear.vercel.app/"
+    true
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
