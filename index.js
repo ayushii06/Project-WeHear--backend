@@ -19,9 +19,11 @@ app.use(
     origin: "*",
   })
 );
+const path = require("path");
+
+app.use(express.static(path.join(__dirname, "build"))); // put this line of code in app.js
 
 app.use(express.json());
-app.use(express.static(__dirname));
 //middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
