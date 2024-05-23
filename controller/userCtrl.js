@@ -6,8 +6,6 @@ require('dotenv').config();
 const asyncHandler = require('express-async-handler')
 const { generateToken } = require("../config/jwtToken");
 const validateMongoDbId = require("../utils/validateMongodbId");
-const {generateRefreshToken} = require("../config/refreshtoken.js")
-const crypto = require("crypto");
 
 exports.signUp = async(req,res)=>{
   let success=false;
@@ -75,7 +73,7 @@ exports.login = async (req,res)=>{
               expiresIn: new Date(Date.now() + 3*24*60*60*1000),
               httpOnly:true,
           }
-          res.cookie("token",token,options).status(200).json({
+          res.status(200).json({
               success:true,
               token,
               user,
