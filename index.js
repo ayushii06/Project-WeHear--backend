@@ -30,12 +30,12 @@ app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
 
 // Allow all origins
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://we-hear.vercel.app'); // Allow the specific origin
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization'); // Add any custom headers here
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow the methods you need
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'https://we-hear.vercel.app'); // Allow the specific origin
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization'); // Add any custom headers here
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow the methods you need
+//   next();
+// });
 
 const path = require("path");
 
