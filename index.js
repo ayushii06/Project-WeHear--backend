@@ -14,7 +14,7 @@ db();
 
 const api = process.env.API_URL;
 //http://localhost:5050/api/shico
-const PORT =  5050;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 const corsOptions = {
