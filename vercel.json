@@ -1,9 +1,9 @@
 {
     "version": 2,
-    "name": "backend ",
+    "name": "backend",
     "builds": [
       {
-        "src": "index.js",
+        "src": "*.js",
         "use": "@vercel/node"
       }
     ],
