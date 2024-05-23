@@ -16,7 +16,6 @@ const api = process.env.API_URL;
 //http://localhost:5050/api/shico
 const PORT =  5050;
 const app = express();
-const cors = require('cors');
 
 const corsOptions = {
   origin: 'https://we-hear.vercel.app',
